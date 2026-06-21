@@ -4,14 +4,35 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
+
+    <!-- The recipe card itself, rounded corners, sized to sit inside the
+         adaptive-icon safe zone so it isn't clipped on round/squircle masks -->
     <path
-        android:pathData="M30,38 C30,34 33,32 38,32 L52,32 L52,76 L38,76 C33,76 30,74 30,70 Z"
+        android:pathData="M33,24 L75,24 A6,6 0 0 1 81,30 L81,78 A6,6 0 0 1 75,84 L33,84 A6,6 0 0 1 27,78 L27,30 A6,6 0 0 1 33,24 Z"
         android:fillColor="#F7F2E9" />
+
+    <!-- Folded corner, the detail that makes it read as a kept card rather
+         than a generic rectangle -->
     <path
-        android:pathData="M78,38 C78,34 75,32 70,32 L56,32 L56,76 L70,76 C75,76 78,74 78,70 Z"
-        android:fillColor="#EFE6D6" />
+        android:pathData="M69,24 L81,24 L81,36 Z"
+        android:fillColor="#DCCFB3" />
+
+    <!-- Three handwriting lines, slightly uneven lengths like a real
+         handwritten recipe rather than perfectly justified text -->
     <path
-        android:pathData="M54,32 L54,76"
+        android:pathData="M35,42 L67,42"
         android:strokeColor="#7A2E2A"
-        android:strokeWidth="2" />
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M35,55 L73,55"
+        android:strokeColor="#7A2E2A"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M35,68 L58,68"
+        android:strokeColor="#7A2E2A"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round" />
+
 </vector>
