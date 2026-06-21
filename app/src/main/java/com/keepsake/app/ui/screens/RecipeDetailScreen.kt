@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
@@ -64,7 +65,7 @@ fun RecipeDetailScreen(
                 Modifier
                     .padding(padding)
                     .fillMaxSize()
-                    .verticalScrollCompat()
+                    .verticalScroll(rememberScrollState())
                     .padding(horizontal = 20.dp)
             ) {
                 Box(
@@ -155,11 +156,4 @@ private fun SectionBlock(title: String, body: String) {
     Text(title, style = MaterialTheme.typography.headlineMedium, color = Ink)
     Spacer(Modifier.height(8.dp))
     Text(body, style = MaterialTheme.typography.bodyLarge, color = Ink)
-}
-
-// Small helper so this file doesn't need an extra import line cluttering the top
-@Composable
-private fun Modifier.verticalScrollCompat(): Modifier {
-    val scrollState = rememberScrollState()
-    return this.then(androidx.compose.foundation.verticalScroll(scrollState))
 }
