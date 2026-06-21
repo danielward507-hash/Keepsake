@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Only permission this app needs: taking a photo of a recipe card -->
-    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- No CAMERA permission needed — we hand off to the system camera app
+         via an implicit intent rather than accessing the camera directly.
+         Declaring the permission without a runtime request is what was
+         causing the crash. -->
     <uses-feature android:name="android.hardware.camera" android:required="false" />
 
     <application
@@ -22,7 +24,6 @@
             </intent-filter>
         </activity>
 
-        <!-- Lets the system camera app save the recipe-card photo into our app's own storage -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.keepsake.app.fileprovider"
