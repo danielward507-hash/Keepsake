@@ -71,7 +71,7 @@ fun RecipeDetailScreen(
                 Box(
                     Modifier
                         .fillMaxWidth()
-                        .height(220.dp)
+                        .heightIn(min = 220.dp, max = 420.dp)
                         .clip(RoundedCornerShape(20.dp))
                         .background(WineSoft),
                     contentAlignment = Alignment.Center
@@ -80,8 +80,8 @@ fun RecipeDetailScreen(
                         AsyncImage(
                             model = r.photoPath,
                             contentDescription = r.title,
-                            contentScale = ContentScale.Crop,
-                            modifier = Modifier.fillMaxSize()
+                            contentScale = ContentScale.Fit,
+                            modifier = Modifier.fillMaxWidth()
                         )
                     } else {
                         Icon(Icons.Filled.MenuBook, contentDescription = null, tint = Wine, modifier = Modifier.size(48.dp))
