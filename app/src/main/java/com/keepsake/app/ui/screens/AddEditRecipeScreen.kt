@@ -80,21 +80,21 @@ fun AddEditRecipeScreen(
             Spacer(Modifier.height(8.dp))
 
             // Photo capture
+            // Photo capture
             Box(
                 Modifier
                     .fillMaxWidth()
-                    .height(180.dp)
+                    .heightIn(min = 180.dp, max = 380.dp)
                     .clip(RoundedCornerShape(18.dp))
-                    .background(Card)
-                    .then(Modifier),
+                    .background(Card),
                 contentAlignment = Alignment.Center
             ) {
                 if (state.photoPath != null) {
                     AsyncImage(
                         model = state.photoPath,
                         contentDescription = "Recipe card photo",
-                        contentScale = ContentScale.Crop,
-                        modifier = Modifier.fillMaxSize().clip(RoundedCornerShape(18.dp))
+                        contentScale = ContentScale.Fit,
+                        modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp))
                     )
                 }
                 FilledTonalButton(
